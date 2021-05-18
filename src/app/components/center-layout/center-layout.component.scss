@@ -12,4 +12,13 @@
 
 button {
     margin-top: 20px;
+    margin-right: 10px;
+}
+
+#btn-play:active {
+    color: green;
+}
+
+#btn-toggle:active {
+    color: blue;
 }

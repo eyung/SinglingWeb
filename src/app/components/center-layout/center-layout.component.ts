@@ -6,7 +6,8 @@ import { InputTextService } from '../../services/input-text.service';
 @Component({
   selector: 'app-center-layout',
   templateUrl: './center-layout.component.html',
-  styleUrls: ['./center-layout.component.scss']
+  styleUrls: ['./center-layout.component.scss'],
+  providers: [InputTextService]
 })
 export class CenterLayoutComponent implements OnInit {
 
@@ -23,5 +24,12 @@ export class CenterLayoutComponent implements OnInit {
       err => console.log(err)
     );
   }
-  
+
+  togglePause() {
+    this.inputtextService.togglePause().subscribe(
+      response => console.log(response),
+      err => console.log(err)
+    );
+  }
+
 }

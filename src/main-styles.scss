@@ -1,25 +1,32 @@
 // Changing bulma variables and adding global styles
 
 // Set your brand colors
-$purple: #8A4D76;
-$pink: #FA7C91;
+$purple: #a59ad7;
+$pink: #fe76c2;
+$blue: #37c7f2;
+$yellow: #ffcb77;
+$red: #fe6d73;
+$teal: #17c3b2;
+
+$light-red: #fff3f3;
+$light: #fafcff;
+
 $brown: #757763;
 $beige-light: #D0D1CD;
 $beige-lighter: #EFF0EB;
 
 // Update Bulma's global variables
 $family-sans-serif: "Nunito", sans-serif;
-$grey-dark: $brown;
-$grey-light: $beige-light;
 $primary: $purple;
-$link: $pink;
+$link: $blue;
 $widescreen-enabled: false;
 $fullhd-enabled: false;
 
 // Update some of Bulma's component variables
-$body-background-color: $beige-lighter;
+$body-background-color: $light;
 $control-border-width: 2px;
 $input-border-color: transparent;
+$input-background-color: #f3f5fa;
 $input-shadow: none;
 
 // GLOBAL STYLES

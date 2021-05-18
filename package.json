@@ -1,12 +1,14 @@
 {
-  "name": "ui",
+  "name": "sw-frontend",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --prod --output-path dist/META-INF/resources",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "lint": "ng lint",
+    "e2e": "ng e2e"
   },
   "private": true,
   "dependencies": {
@@ -21,7 +23,9 @@
     "bulma": "^0.9.2",
     "rxjs": "~6.6.0",
     "tslib": "^2.1.0",
-    "zone.js": "~0.11.4"
+    "zone.js": "~0.11.4",
+    "ajv": "^6.9.1",
+    "tslint": "^5.12.0"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~12.0.0",

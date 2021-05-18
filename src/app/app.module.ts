@@ -21,7 +21,7 @@ import { InputTextService } from './services/input-text.service';
     FormsModule,
     HttpClientModule
   ],
-  providers: [InputTextService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

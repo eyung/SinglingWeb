@@ -14,4 +14,8 @@ export class InputTextService {
   sendText(text: string) {
     return this.http.post(this.rootURL + '/text', text);
   }
+
+  togglePause() {
+    return this.http.post(this.rootURL + '/togglepause', '');
+  }
 }
