@@ -1,0 +1,19 @@
+<div class="form-container">
+
+    <form #textForm="ngForm" (ngSubmit)="onSubmit(textForm)">
+        
+        <div class="field">
+            <label class="label"></label>
+            <div class="control">
+                <textarea required name="text" class="input textarea" placeholder="Type here" rows="25" [(ngModel)]="textModel"></textarea>
+            </div>
+        </div>
+
+        <div class="field">
+            <div class="control">
+                <button class="button is-success" type="submit" [disabled]="!textForm.valid">Sonify</button>
+            </div>
+        </div>
+    </form>
+
+</div>
