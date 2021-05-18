@@ -11,7 +11,7 @@ import javax.swing.text.DefaultHighlighter;
 import javax.swing.text.Highlighter;
 import java.awt.*;
 
-public class SinglingPlayer implements Runnable {
+public class PlayerManager implements Runnable {
 
     private Pattern pattern;
     private Player player;

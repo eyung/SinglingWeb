@@ -12,8 +12,6 @@ import java.util.Set;
 @CrossOrigin(origins = "http://localhost:4200")
 public class MainController {
 
-    String inputText;
-
     List<TransformationManager.Instruction> instructions = new ArrayList<>();
 
     Set<String> passingWords = new HashSet<String>();
@@ -21,22 +19,8 @@ public class MainController {
     // Create and init producer
     Producer producer = new Producer();
 
-    // Create and init Composer
-    Composer composer = new Composer
-            .ComposerBuilder()
-            .setInstrument("Piano")
-            .setNoteLength(0.50)
-            .setOctave(3)
-            .setTempo(350.00)
-            .setFrequency(200.00)
-            .setRestLength(0.50)
-            .setRestLengthLineBreak(1.00)
-            .wantWord(true)
-            .withOperation("LEXNAMEFREQ")
-            .withOrdering(0)
-            .useTransformations(instructions)
-            .excludeWords(passingWords)
-            .build();
+    // Create Composer
+    Composer composer;
 
     @GetMapping("/api")
     public String getTest() {
@@ -44,12 +28,27 @@ public class MainController {
     }
 
     @PostMapping("/text")
-    public String doSomething(@RequestBody String input) {
-        this.inputText = input;
-        System.out.println(inputText);
+    public void play(@RequestBody String input) {
+
+        // Init Composer
+        composer = new Composer
+                .ComposerBuilder()
+                .setInstrument("Piano")
+                .setNoteLength(0.50)
+                .setOctave(3)
+                .setTempo(350.00)
+                .setFrequency(200.00)
+                .setRestLength(0.50)
+                .setRestLengthLineBreak(1.00)
+                .wantWord(true)
+                .withOperation("LEXNAMEFREQ")
+                .withOrdering(0)
+                .useTransformations(instructions)
+                .excludeWords(passingWords)
+                .build();
 
         // Process user input text
-        composer.processString(inputText);
+        composer.processString(input);
 
         // Init Producer using pattern created by Composer
         producer.setPlayer();
@@ -60,6 +59,11 @@ public class MainController {
         // Start player
         producer.doStartPlayer(0.50);
 
-        return "USER TEXT: " + inputText;
+        //return "USER TEXT: " + input;
+    }
+
+    @PostMapping("/togglepause")
+    public void togglePause() {
+        producer.doPause();
     }
 }

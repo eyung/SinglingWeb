@@ -16,7 +16,7 @@ public class Producer {
 
     // Instantiate player classes
     private Player player;
-    private SinglingPlayer singlingPlayer;
+    private PlayerManager singlingPlayer;
     private Thread threadPlayer;
     private Pattern pattern;
 
@@ -51,10 +51,10 @@ public class Producer {
         }
 
         if (singlingPlayer == null) {
-            singlingPlayer = new SinglingPlayer();
+            singlingPlayer = new PlayerManager();
         } else if (singlingPlayer != null) {
             singlingPlayer.stop();
-            singlingPlayer = new SinglingPlayer();
+            singlingPlayer = new PlayerManager();
         }
 
         threadPlayer = new Thread(singlingPlayer);

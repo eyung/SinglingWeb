@@ -13,11 +13,18 @@
 	<name>sw-backend</name>
 	<description>backend module</description>
 
+	<packaging>jar</packaging>
 
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>com.singling</groupId>
+			<artifactId>sw-frontend</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 
 		<dependency>
